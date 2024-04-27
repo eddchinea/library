@@ -6,4 +6,43 @@ body {
 
 *, *::before, *::after {
     box-sizing: inherit;
+    margin: inherit;
+    padding: inherit;
+}
+
+.library {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    padding: 5px;
+    justify-content: center;
+}
+
+.library-header {
+    justify-self: center;
+}
+
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 15px;
+    background-color: #E2E8F0;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.book {
+    display: grid;
+    border-left: 5px solid #3182CE;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    gap: 5px;
+}
+
+.book p {
+}
+
+.book-title {
+    justify-self: center;
 }
