@@ -48,8 +48,8 @@ function addBookCardToPage () {
     
         //Add content for each book element
         bookTitle.textContent = book.title;
-        bookAuthor.textContent = book.author;
-        bookPages.textContent = book.pages;
+        bookAuthor.textContent = `- Author: ${book.author}`;
+        bookPages.textContent = `- ${book.pages} pages`;
         readStatus.textContent = book.read;
     
         // Append each book element to the book card

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 *, *::before, *::after {
@@ -41,8 +44,10 @@ body {
 }
 
 .book p {
+    color: #4A5568;
 }
 
 .book-title {
     justify-self: center;
+    font-size: 1.5rem;
 }
