@@ -38,6 +38,7 @@ function addBookCardToPage () {
         const bookAuthor = document.createElement('p');
         const bookPages = document.createElement('p');
         const readStatus = document.createElement('p');
+        const removeButton = document.createElement('button');
     
         //Add classes to each book element
         bookDiv.classList.add('book');
@@ -45,18 +46,26 @@ function addBookCardToPage () {
         bookAuthor.classList.add('book-author');
         bookPages.classList.add('book-pages');
         readStatus.classList.add('book-read');
+        removeButton.classList.add('remove-book');
     
         //Add content for each book element
         bookTitle.textContent = book.title;
         bookAuthor.textContent = `- Author: ${book.author}`;
         bookPages.textContent = `- ${book.pages} pages`;
         readStatus.textContent = book.read;
-    
+        removeButton.textContent = 'Remove';
+
+        // Add event listener to remove button
+        removeButton.addEventListener('click', () => {
+            library.splice(library.indexOf(book), 1);
+            booksContainer.removeChild(bookDiv);
+        });
         // Append each book element to the book card
         bookDiv.appendChild(bookTitle);
         bookDiv.appendChild(bookAuthor);
         bookDiv.appendChild(bookPages);
         bookDiv.appendChild(readStatus);
+        bookDiv.appendChild(removeButton);
     
         //Append the book card to the books container
         booksContainer.appendChild(bookDiv);
