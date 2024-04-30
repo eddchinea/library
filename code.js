@@ -16,7 +16,7 @@ function addBookToLibrary (book) {
 }
 
 // Example books:
-const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet');
+const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read');
 const book2 = new Book('The Fellowship of the Ring', 'J.R.R. Tolkien', 398, 'read');
 const book3 = new Book('The Two Towers', 'J.R.R. Tolkien', 327, 'read');
 
