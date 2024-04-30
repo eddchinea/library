@@ -62,3 +62,13 @@ body {
     right: -5px;
     top: -5px;
 }
+
+.remove-book {
+    background-color: #E53E3E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
