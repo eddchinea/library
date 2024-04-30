@@ -73,3 +73,6 @@ function addBookCardToPage () {
 }
 
 addBookCardToPage();
+
+// Add book section
+const addBookBtn = document.querySelector('.add-book');
