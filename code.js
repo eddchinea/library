@@ -77,6 +77,7 @@ addBookCardToPage();
 // Add book section
 const addBookBtn = document.querySelector('.add-book')
 const addBookModal = document.querySelector('.add-book-modal');
+const submitBook = document.querySelector('.submit-book');
 
 addBookBtn.addEventListener('click', () => {
     addBookModal.showModal();
