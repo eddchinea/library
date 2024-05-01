@@ -16,13 +16,13 @@ function addBookToLibrary (book) {
 }
 
 // Example books:
-const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read');
-const book2 = new Book('The Fellowship of the Ring', 'J.R.R. Tolkien', 398, 'read');
-const book3 = new Book('The Two Towers', 'J.R.R. Tolkien', 327, 'read');
+// const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read');
+// const book2 = new Book('The Fellowship of the Ring', 'J.R.R. Tolkien', 398, 'read');
+// const book3 = new Book('The Two Towers', 'J.R.R. Tolkien', 327, 'read');
 
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
+// addBookToLibrary(book1);
+// addBookToLibrary(book2);
+// addBookToLibrary(book3);
 
 
 // Display books in books container
@@ -31,6 +31,7 @@ addBookToLibrary(book3);
 const booksContainer = document.querySelector('.books-container');
 
 function addBookCardToPage () {
+
     library.forEach(book => {
         //Book card
         const bookDiv = document.createElement('div');
@@ -72,8 +73,6 @@ function addBookCardToPage () {
     })
 }
 
-addBookCardToPage();
-
 // Add book section
 const addBookBtn = document.querySelector('.add-book')
 const addBookModal = document.querySelector('.add-book-modal');
@@ -81,4 +80,18 @@ const submitBook = document.querySelector('.submit-book');
 
 addBookBtn.addEventListener('click', () => {
     addBookModal.showModal();
+})
+
+submitBook.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    const read = document.querySelector('#read-status').value;
+
+    const newBook = new Book(title, author, pages, read);
+    addBookToLibrary(newBook);
+    addBookCardToPage();
+    addBookModal.close();
 })
