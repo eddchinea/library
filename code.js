@@ -85,13 +85,21 @@ addBookBtn.addEventListener('click', () => {
 submitBook.addEventListener('click', (e) => {
     e.preventDefault();
 
+    const form = document.querySelector('.add-book-form');
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
-    const read = document.querySelector('#read-status').value;
+    const read = document.querySelector('#read-status').value === 'on' ? 'read' : 'not read';
 
     const newBook = new Book(title, author, pages, read);
     addBookToLibrary(newBook);
     addBookCardToPage();
     addBookModal.close();
+
+    // Clear input fields
+    form.reset()
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    read.checked = false;
 })
