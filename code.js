@@ -32,7 +32,8 @@ const booksContainer = document.querySelector('.books-container');
 
 function addBookCardToPage () {
 
-    library.forEach(book => {
+    for (let book of library){
+
         //Book card
         const bookDiv = document.createElement('div');
         const bookTitle = document.createElement('h4');
@@ -70,7 +71,7 @@ function addBookCardToPage () {
     
         //Append the book card to the books container
         booksContainer.appendChild(bookDiv);
-    })
+    }
 }
 
 // Add book section
