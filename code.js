@@ -31,6 +31,8 @@ function addBookToLibrary (book) {
 const booksContainer = document.querySelector('.books-container');
 
 function addBookCardToPage () {
+    // Clear books container
+    booksContainer.innerHTML = '';
 
     for (let book of library){
 
