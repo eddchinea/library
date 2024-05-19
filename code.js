@@ -84,8 +84,8 @@ function addBookCardToPage () {
         bookDiv.appendChild(bookAuthor);
         bookDiv.appendChild(bookPages);
         bookDiv.appendChild(readStatus);
-        bookDiv.appendChild(removeButton);
         bookDiv.appendChild(changeReadStatus);
+        bookDiv.appendChild(removeButton);
     
         //Append the book card to the books container
         booksContainer.appendChild(bookDiv);
