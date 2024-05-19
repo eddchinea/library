@@ -90,7 +90,7 @@ submitBook.addEventListener('click', (e) => {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
-    const read = document.querySelector('#read-status').value === 'on' ? 'read' : 'not read';
+    const read = document.querySelector('#read-status').checked === true ? 'read' : 'not read';
 
     const newBook = new Book(title, author, pages, read);
     addBookToLibrary(newBook);
