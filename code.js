@@ -69,6 +69,9 @@ function addBookCardToPage () {
             booksContainer.removeChild(bookDiv);
         });
 
+        //Set initial read status color
+        readStatus.style.color = book.read === 'read' ? '#38A169' : '#E53E3E';
+
         // Add event listener to change read status button
         changeReadStatus.addEventListener('click', () => {
             book.read = book.read === 'read' ? 'not read' : 'read';
@@ -76,7 +79,7 @@ function addBookCardToPage () {
             changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
 
             //Change read status color
-            readStatus.style.color = book.read === 'read' ? 'green' : 'red';
+            readStatus.style.color = book.read === 'read' ? '#38A169' : '#E53E3E';
         });
 
         // Append each book element to the book card
