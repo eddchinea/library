@@ -43,6 +43,7 @@ function addBookCardToPage () {
         const bookPages = document.createElement('p');
         const readStatus = document.createElement('p');
         const removeButton = document.createElement('button');
+        const changeReadStatus = document.createElement('button');
     
         //Add classes to each book element
         bookDiv.classList.add('book');
@@ -51,6 +52,7 @@ function addBookCardToPage () {
         bookPages.classList.add('book-pages');
         readStatus.classList.add('book-read');
         removeButton.classList.add('remove-book');
+        changeReadStatus.classList.add('change-read-status');
     
         //Add content for each book element
         bookTitle.textContent = book.title;
@@ -58,18 +60,28 @@ function addBookCardToPage () {
         bookPages.textContent = `- ${book.pages} pages`;
         readStatus.textContent = book.read;
         removeButton.textContent = 'Remove';
+        changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
 
         // Add event listener to remove button
         removeButton.addEventListener('click', () => {
             library.splice(library.indexOf(book), 1);
             booksContainer.removeChild(bookDiv);
         });
+
+        // Add event listener to change read status button
+        changeReadStatus.addEventListener('click', () => {
+            book.read = book.read === 'read' ? 'not read' : 'read';
+            readStatus.textContent = book.read;
+            changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
+        });
+
         // Append each book element to the book card
         bookDiv.appendChild(bookTitle);
         bookDiv.appendChild(bookAuthor);
         bookDiv.appendChild(bookPages);
         bookDiv.appendChild(readStatus);
         bookDiv.appendChild(removeButton);
+        bookDiv.appendChild(changeReadStatus);
     
         //Append the book card to the books container
         booksContainer.appendChild(bookDiv);
