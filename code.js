@@ -62,6 +62,7 @@ function addBookCardToPage () {
         removeButton.textContent = 'Remove';
         changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
 
+
         // Add event listener to remove button
         removeButton.addEventListener('click', () => {
             library.splice(library.indexOf(book), 1);
@@ -73,6 +74,9 @@ function addBookCardToPage () {
             book.read = book.read === 'read' ? 'not read' : 'read';
             readStatus.textContent = book.read;
             changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
+
+            //Change read status color
+            readStatus.style.color = book.read === 'read' ? 'green' : 'red';
         });
 
         // Append each book element to the book card

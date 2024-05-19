@@ -90,6 +90,16 @@ body {
     font-size: 0.9rem;
 }
 
+.change-read-status {
+    background-color: #3182CE;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
 .add-book-modal {
     position: absolute;
     top: 50%;
