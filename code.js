@@ -30,7 +30,7 @@ function addBookToLibrary (book) {
 // Define books container
 const booksContainer = document.querySelector('.books-container');
 
-function addBookCardToPage () {
+function addLibraryToPage () {
     // Clear books container
     booksContainer.innerHTML = '';
 
@@ -115,7 +115,7 @@ submitBook.addEventListener('click', (e) => {
 
     const newBook = new Book(title, author, pages, read);
     addBookToLibrary(newBook);
-    addBookCardToPage();
+    addLibraryToPage();
     addBookModal.close();
 
     // Clear input fields
