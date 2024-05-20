@@ -9,6 +9,11 @@ function Book(title, author, pages, read) {
     this.info = function() {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
     }
+
+    this.remove = function() {
+        library.splice(library.indexOf(this), 1);
+
+    }
 }
 
 function addBookToLibrary (book) {
@@ -65,7 +70,7 @@ function addLibraryToPage () {
 
         // Add event listener to remove button
         removeButton.addEventListener('click', () => {
-            library.splice(library.indexOf(book), 1);
+            book.remove();
             booksContainer.removeChild(bookDiv);
         });
 
@@ -89,6 +94,9 @@ function addLibraryToPage () {
         bookDiv.appendChild(readStatus);
         bookDiv.appendChild(changeReadStatus);
         bookDiv.appendChild(removeButton);
+
+        //Data attribute for each book card
+        bookDiv.setAttribute('data-title', library.indexOf(book));
     
         //Append the book card to the books container
         booksContainer.appendChild(bookDiv);
