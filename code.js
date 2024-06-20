@@ -1,5 +1,3 @@
-const library = [];
-
 class Book {
     constructor(title, author, pages, isRead) {
         this.title = title;
@@ -9,12 +7,37 @@ class Book {
     }
 
     toggleReadStatus() {
-        this.isRead = !this.isRead
+        this.isRead = !this.isRead;
     }
 }
 
-function addBookToLibrary (book) {
-    library.push(book);
+class Library {
+    #bookList;
+
+    constructor() {
+        this.#bookList = [];
+    }
+
+    addBook(book) {
+        if (book instanceof Book) {
+            this.#bookList.push(book);
+        } else { 
+            console.error('Please add a valid book');
+        }
+    }
+
+    removeBook(book) {
+        const bookIndex = this.#bookList.indexOf(book);
+        if (bookIndex !== -1) {
+            this.#bookList.splice(bookIndex, 1);
+        } else {
+            console.error('Book not found');
+        }
+    }
+
+    getBookList() {
+        return this.#bookList;
+    }
 }
 
 // Example books:
