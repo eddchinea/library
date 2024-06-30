@@ -40,88 +40,80 @@ class Library {
     }
 }
 
-// Example books:
-// const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read');
-// const book2 = new Book('The Fellowship of the Ring', 'J.R.R. Tolkien', 398, 'read');
-// const book3 = new Book('The Two Towers', 'J.R.R. Tolkien', 327, 'read');
+class UI {
 
-// addBookToLibrary(book1);
-// addBookToLibrary(book2);
-// addBookToLibrary(book3);
-
-
-// Display books in books container
-
-// Define books container
-const booksContainer = document.querySelector('.books-container');
-
-function addLibraryToPage () {
-    // Clear books container
-    booksContainer.innerHTML = '';
-
-    for (let book of library){
-
-        //Book card
-        const bookDiv = document.createElement('div');
-        const bookTitle = document.createElement('h4');
-        const bookAuthor = document.createElement('p');
-        const bookPages = document.createElement('p');
-        const readStatus = document.createElement('p');
-        const removeButton = document.createElement('button');
-        const changeReadStatus = document.createElement('button');
-    
-        //Add classes to each book element
-        bookDiv.classList.add('book');
-        bookTitle.classList.add('book-title');
-        bookAuthor.classList.add('book-author');
-        bookPages.classList.add('book-pages');
-        readStatus.classList.add('book-read');
-        removeButton.classList.add('remove-book');
-        changeReadStatus.classList.add('change-read-status');
-    
-        //Add content for each book element
-        bookTitle.textContent = book.title;
-        bookAuthor.textContent = `- Author: ${book.author}`;
-        bookPages.textContent = `- ${book.pages} pages`;
-        readStatus.textContent = book.read;
-        removeButton.textContent = 'Remove';
-        changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
-
-
-        // Add event listener to remove button
-        removeButton.addEventListener('click', () => {
-            book.remove();
-            booksContainer.removeChild(bookDiv);
-        });
-
-        //Set initial read status color
-        readStatus.style.color = book.read === 'read' ? '#38A169' : '#E53E3E';
-
-        // Add event listener to change read status button
-        changeReadStatus.addEventListener('click', () => {
-            book.read = book.read === 'read' ? 'not read' : 'read';
-            readStatus.textContent = book.read;
-            changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
-
-            //Change read status color
-            readStatus.style.color = book.read === 'read' ? '#38A169' : '#E53E3E';
-        });
-
-        // Append each book element to the book card
-        bookDiv.appendChild(bookTitle);
-        bookDiv.appendChild(bookAuthor);
-        bookDiv.appendChild(bookPages);
-        bookDiv.appendChild(readStatus);
-        bookDiv.appendChild(changeReadStatus);
-        bookDiv.appendChild(removeButton);
-
-        //Data attribute for each book card
-        bookDiv.setAttribute('data-title', library.indexOf(book));
-    
-        //Append the book card to the books container
-        booksContainer.appendChild(bookDiv);
-    }
 }
+
+
+// const booksContainer = document.querySelector('.books-container');
+
+// function addLibraryToPage () {
+//     // Clear books container
+//     booksContainer.innerHTML = '';
+
+//     for (let book of library){
+
+//         //Book card
+//         const bookDiv = document.createElement('div');
+//         const bookTitle = document.createElement('h4');
+//         const bookAuthor = document.createElement('p');
+//         const bookPages = document.createElement('p');
+//         const readStatus = document.createElement('p');
+//         const removeButton = document.createElement('button');
+//         const changeReadStatus = document.createElement('button');
+    
+//         //Add classes to each book element
+//         bookDiv.classList.add('book');
+//         bookTitle.classList.add('book-title');
+//         bookAuthor.classList.add('book-author');
+//         bookPages.classList.add('book-pages');
+//         readStatus.classList.add('book-read');
+//         removeButton.classList.add('remove-book');
+//         changeReadStatus.classList.add('change-read-status');
+    
+//         //Add content for each book element
+//         bookTitle.textContent = book.title;
+//         bookAuthor.textContent = `- Author: ${book.author}`;
+//         bookPages.textContent = `- ${book.pages} pages`;
+//         readStatus.textContent = book.read;
+//         removeButton.textContent = 'Remove';
+//         changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
+
+
+//         // Add event listener to remove button
+//         removeButton.addEventListener('click', () => {
+//             book.remove();
+//             booksContainer.removeChild(bookDiv);
+//         });
+
+//         //Set initial read status color
+//         readStatus.style.color = book.read === 'read' ? '#38A169' : '#E53E3E';
+
+//         // Add event listener to change read status button
+//         changeReadStatus.addEventListener('click', () => {
+//             book.read = book.read === 'read' ? 'not read' : 'read';
+//             readStatus.textContent = book.read;
+//             changeReadStatus.textContent = `${book.read === 'read' ? 'Mark as not read' : 'Mark as read'}`;
+
+//             //Change read status color
+//             readStatus.style.color = book.read === 'read' ? '#38A169' : '#E53E3E';
+//         });
+
+//         // Append each book element to the book card
+//         bookDiv.appendChild(bookTitle);
+//         bookDiv.appendChild(bookAuthor);
+//         bookDiv.appendChild(bookPages);
+//         bookDiv.appendChild(readStatus);
+//         bookDiv.appendChild(changeReadStatus);
+//         bookDiv.appendChild(removeButton);
+
+//         //Data attribute for each book card
+//         bookDiv.setAttribute('data-title', library.indexOf(book));
+    
+//         //Append the book card to the books container
+//         booksContainer.appendChild(bookDiv);
+//     }
+// }
 
 // Add book section
 const addBookBtn = document.querySelector('.add-book')
